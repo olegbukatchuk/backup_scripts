@@ -69,4 +69,4 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 
 ### Поддержка и контакты
 
-Есть вопрос или предложение? Свяжитесь со мной любым удобным вам способом из представленных здесь [bukatchuk.com](https://bukatchuk.com/contacts/).
+Есть вопрос или предложение? Свяжитесь со мной любым удобным вам способом из представленных у меня в блоге [bukatchuk.com](https://bukatchuk.com/contacts/).
