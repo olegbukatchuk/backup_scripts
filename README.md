@@ -69,7 +69,11 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 ### Cron шпаргалка
 Ставим скрипт на выполнение (из консоли) в 1 час 00 минут после полуночи ежедневно:
 
-```markdown  
+```markdown
+crontab -e
+
+# Добавляем в конец файла наше задание
+
 0 1 * * * /path/to/scripts/backup_mysql.sh
 
 # * * * * * "/команда/которая/будет/выполнена"
@@ -81,7 +85,11 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 # | ----------- Часы (0 - 23)
 # ------------- Минуты (0 - 59)
 ```
+Сохраняем и перезапускаем Cron:
 
+```markdown
+sudo service cron restart
+```
 
 
 ### Поддержка и контакты
