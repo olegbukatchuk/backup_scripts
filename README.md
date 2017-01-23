@@ -72,6 +72,7 @@ crontab -e
 ```markdown
 sudo service cron restart
 ```
+# P.S.
 ### Синтаксис Cron'a
 ```markdown
 # * * * * * "/команда/которая/будет/выполнена"
