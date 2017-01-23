@@ -91,6 +91,7 @@ crontab -e
 sudo service cron restart
 ```
 
+Готово!
 
 ### Поддержка и контакты
 
