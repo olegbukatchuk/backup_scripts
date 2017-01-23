@@ -13,7 +13,6 @@ sudo chmod -R 777 /path/to/backup/mysql
 Все скрипты умеют работать, как с локальным, так и с сетевым сокетом, поэтому задание можно запускать не только на сервере, где находиться база данных, но и на удалённом хосте.
 
 ### MySQL
-
 Определение констант и переменных для соединения с базой данных MySQL 5.x/6.x
 
 ```markdown
@@ -29,10 +28,8 @@ export RUN_ME=/path/to/script/backup_mysql.sh
 # Создаём константу для директории хранения бекапов.
 export STORAGE=/path/to/backup/mysql
 ```
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### PostgreSQL
-
 Определение констант и переменных для соединения с базой данных MySQL 5.x/6.x
 
 ```markdown
