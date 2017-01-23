@@ -4,7 +4,7 @@
 ```markdown
 sudo chmod +x /path/to/script/backup_mysql.sh
 ```
-далее выставить права доступа на директорию хранения бекапов:
+выставить права доступа на директорию хранения бекапов:
 ```markdown
 sudo chmod -R 777 /path/to/backup/mysql
 ```
