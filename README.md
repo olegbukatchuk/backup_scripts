@@ -25,7 +25,7 @@ OK
 Определение констант и переменных для соединения с базой данных MySQL 5.x/6.x
 
 ```markdown
-# Объявляем переменные для авторизации в MySQL
+# Объявляем переменные для авторизации в MySQL.
 export HOST_MYSQL=some_localhost
 export USER_MYSQL=some_login
 export PASS_MYSQL=some_password
