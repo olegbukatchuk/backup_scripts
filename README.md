@@ -1,4 +1,4 @@
-## Скрипты для резервного копиравания баз данных
+## Скрипты для резервного копирования баз данных
 
 You can use the [editor on GitHub](https://github.com/olegbukatchuk/backup_scripts/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
