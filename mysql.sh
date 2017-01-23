@@ -2,23 +2,20 @@
 
 # Скрипт экспорта БД из MySQL 5.x/6.x
 # Автор:  Олег Букатчук
-# Версия: 0.6
+# Версия: 1.0
 # e-mail: oleg@bukatchuk.com
 
 # Объявляем переменные для авторизации в MySQL
-export HOST_MYSQL=127.0.0.1
-export USER_MYSQL=login
-export PASS_MYSQL=pass
-export DB_MYSQL=db
-
-# Создаём константу для подключеня к базе данных.
-export CONNECT_DB=mysql -h="$HOST_MYSQL" -u="$USER_MYSQL" -p="$PASS_MYSQL" -d="$DB_MYSQL"
+export HOST_MYSQL=localhost
+export USER_MYSQL=some_login
+export PASS_MYSQL=some_pass
+export DB_MYSQL=some_database
 
 # Создаём константу из абсолютного пути к скрипту.
 export RUN_ME=/path/to/script/backup_mysql.sh
 
 # Создаём константу для директории хранения бекапов.
-export STORAGE=/path/to/backup/dir
+export STORAGE=/path/to/backup/mysql
 
 # Проверяем наличие директории для бекапов, если директории нет 
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
@@ -33,7 +30,7 @@ fi
 echo "Идёт создание дампа БД..."
 
 # Создаём дамп базы данных, архивируем и называем бекап текущей датой.
-mysqldump --d=$CONNECT_DB | gzip > $STORAGE/$(date +%Y-%m-%d).gz
+mysqldump --user=$USER_MYSQL --password=$PASS_MYSQL --host=$HOST_MYSQL $DB_MYSQL | gzip > $STORAGE/$(date +%Y-%m-%d).gz
 
 # Информируем пользователя
 echo "OK"
@@ -62,7 +59,7 @@ fi
 exit 0
 
 # Ставим скрипт на выполнение (из консоли) в 1 час 00 минут после полуночи ежедневно:  
-# 0 1 * * * /data/scripts/backup_mysql.sh
+# 0 1 * * * /path/to/scripts/backup_mysql.sh
 
 # Cron шпаргалка:
 # * * * * * "/команда/которая/будет/выполнена"
