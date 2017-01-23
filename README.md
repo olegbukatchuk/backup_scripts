@@ -20,6 +20,17 @@ OK
 OK
 ```
 
+### Общие требования
+Сделать скрипт исполняемым:
+```markdown
+sudo chmod +x /path/to/script/backup_mysql.sh
+```
+
+Выставить права доступа на директорию хранения бекапов:
+```markdown
+sudo chmod -R 777 /path/to/backup/mysql
+```
+
 ### MySQL
 
 Определение констант и переменных для соединения с базой данных MySQL 5.x/6.x
