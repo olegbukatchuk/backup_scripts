@@ -25,21 +25,17 @@ OK
 Определение констант и переменных для соединения с базой данных MySQL 5.x/6.x
 
 ```markdown
-Syntax highlighted code block
+# Объявляем переменные для авторизации в MySQL
+export HOST_MYSQL=some_localhost
+export USER_MYSQL=some_login
+export PASS_MYSQL=some_password
+export DB_MYSQL=some_database
 
-# Header 1
-## Header 2
-### Header 3
+# Создаём константу из абсолютного пути к скрипту.
+export RUN_ME=/path/to/script/backup_mysql.sh
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+# Создаём константу для директории хранения бекапов.
+export STORAGE=/path/to/backup/mysql
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
