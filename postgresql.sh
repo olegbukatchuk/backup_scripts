@@ -50,7 +50,7 @@ echo "ОК"
 echo "Проверка наличия задания в Cron'e..."
 
 # Преверяем наличие записи в планировщике, если нет выводим сообщение и подсказку.
-if crontab -l | grep "0 1 * * * $RUN_ME"; 
+if crontab -l | grep "$RUN_ME"; 
     then
         echo "OK"
     else
