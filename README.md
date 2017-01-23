@@ -1,10 +1,8 @@
 ## Скрипты для резервного копирования баз данных
 
-You can use the [editor on GitHub](https://github.com/olegbukatchuk/backup_scripts/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Набор боевых скриптов для создания дампов баз данных в СУБД: MySQL 5.x/6.x, PostgreSQL 9.x 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### PostgreSQL
+### MySQL
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
@@ -28,7 +26,7 @@ Syntax highlighted code block
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### MySQL
+### PostgreSQL
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
