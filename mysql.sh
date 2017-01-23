@@ -6,13 +6,13 @@
 # e-mail: oleg@bukatchuk.com
 
 # Объявляем переменные для авторизации в MySQL
-host=127.0.0.1
-user=login
-password=pass
-database=db
+export HOST_MYSQL=127.0.0.1
+export USER_MYSQL=login
+export PASS_MYSQL=pass
+export DB_MYSQL=db
 
 # Создаём константу для подключеня к базе данных.
-export CONNECT_DB=mysql --host="$host" --user="$user" --password="$password" --database="$database"
+export CONNECT_DB=mysql -h="$HOST_MYSQL" -u="$USER_MYSQL" -p="$PASS_MYSQL" -d="$DB_MYSQL"
 
 # Создаём константу из абсолютного пути к скрипту.
 export RUN_ME=/path/to/script/backup_mysql.sh
@@ -33,7 +33,7 @@ fi
 echo "Идёт создание дампа БД..."
 
 # Создаём дамп базы данных, архивируем и называем бекап текущей датой.
-mysqldump --database=$CONNECT_DB | gzip > $STORAGE/$(date +%Y-%m-%d).gz
+mysqldump --d=$CONNECT_DB | gzip > $STORAGE/$(date +%Y-%m-%d).gz
 
 # Информируем пользователя
 echo "OK"
