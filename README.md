@@ -25,10 +25,10 @@ sudo chmod -R 777 /path/to/backup/mysql
 
 ```markdown
 # Объявляем переменные для авторизации в MySQL.
-export HOST_MYSQL=some_host
-export USER_MYSQL=some_login
-export PASS_MYSQL=some_password
-export DB_MYSQL=some_database
+export HOST_MYSQL=host
+export USER_MYSQL=login
+export PASS_MYSQL=password
+export DB_MYSQL=database
 
 # Создаём константу из абсолютного пути к скрипту.
 export RUN_ME=/path/to/script/backup_mysql.sh
@@ -42,7 +42,7 @@ export STORAGE=/path/to/backup/mysql
 
 ```markdown
 # Создаём константу для подключеня к базе данных.
-export CONNECT_DB=postgresql://some_password:some_login@some_host:5432/some_database
+export CONNECT_DB=postgresql://password:login@host:5432/database
 
 # Создаём константу из абсолютного пути к скрипту.
 export RUN_ME=/path/to/script/backup_postgresql.sh
