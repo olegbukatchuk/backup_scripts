@@ -6,7 +6,7 @@
 # e-mail: oleg@bukatchuk.com
 
 # Объявляем переменные для авторизации в MySQL
-export HOST_MYSQL=localhost
+export HOST_MYSQL=some_localhost
 export USER_MYSQL=some_login
 export PASS_MYSQL=some_password
 export DB_MYSQL=some_database
@@ -30,7 +30,7 @@ fi
 echo "Идёт создание дампа БД..."
 
 # Создаём дамп базы данных, архивируем и называем бекап текущей датой.
-mysqldump --user=$USER_MYSQL --password=$PASS_MYSQL --host=$HOST_MYSQL $DB_MYSQL | gzip > $STORAGE/$(date +%Y-%m-%d).gz
+mysqldump --host=$HOST_MYSQL --user=$USER_MYSQL --password=$PASS_MYSQL $DB_MYSQL | gzip > $STORAGE/$(date +%Y-%m-%d).gz
 
 # Информируем пользователя
 echo "OK"
