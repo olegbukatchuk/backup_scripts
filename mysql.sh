@@ -8,7 +8,7 @@
 # Объявляем переменные для авторизации в MySQL
 export HOST_MYSQL=localhost
 export USER_MYSQL=some_login
-export PASS_MYSQL=some_pass
+export PASS_MYSQL=some_password
 export DB_MYSQL=some_database
 
 # Создаём константу из абсолютного пути к скрипту.
