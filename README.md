@@ -16,7 +16,7 @@ sudo chmod +x /path/to/script/backup_mysql.sh
 ```
 Выставляем права доступа на директорию хранения бекапов:
 ```markdown
-sudo chmod -R 777 /path/to/backup/mysql
+sudo chmod -R 755 /path/to/backup/mysql
 ```
 и прописываем значения переменных и констант для корректного выполнения процедуры снятия дампов. 
 
