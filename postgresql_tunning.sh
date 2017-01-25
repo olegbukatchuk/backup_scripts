@@ -14,7 +14,7 @@ export RUN_ME=/path/to/script/postgresql_tunning.sh
 # Создаём константу для директории хранения конфигов.
 export CONFIG=/path/to/backup/dir
 
-# Подключаем FTP и монтируем его в директорию 
+# Подключаем FTP и монтируем его в директорию $FTP
 curlftpfs -v -o iocharset=UTF-8 ftp://user:password@ftp.domain.ru/ /mnt/ftp
 
 # Создаём константу для директории монтирования FTP.
