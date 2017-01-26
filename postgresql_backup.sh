@@ -21,7 +21,7 @@ export SPACE_USED=`du -sh $STORAGE/$(date +%Y-%m-%d).gz`
 export SPACE_TOTAL=`df -hT $STORAGE`
 
 # Узнаём имя сервера
-export $HOST=hostname
+export $HOST=`hostname`
 
 # Информируем пользователя
 echo "Проверка наличия директории для хранения бекапов..."
