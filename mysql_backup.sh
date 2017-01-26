@@ -2,20 +2,29 @@
 
 # Скрипт экспорта БД из MySQL 5.x/6.x
 # Автор:  Олег Букатчук
-# Версия: 1.0
+# Версия: 1.2
 # e-mail: oleg@bukatchuk.com
 
 # Объявляем переменные для авторизации в MySQL
-export HOST_MYSQL=some_localhost
-export USER_MYSQL=some_login
-export PASS_MYSQL=some_password
-export DB_MYSQL=some_database
+export HOST_MYSQL=localhost
+export USER_MYSQL=login
+export PASS_MYSQL=password
+export DB_MYSQL=database
 
 # Создаём константу из абсолютного пути к скрипту.
 export RUN_ME=/path/to/script/backup_mysql.sh
 
 # Создаём константу для директории хранения бекапов.
 export STORAGE=/path/to/backup/mysql
+
+# Узнаем размер занимаемого места созданным бэкапом
+export SPACE_USED=`du -sh $STORAGE/$(date +%Y-%m-%d).gz`
+
+# Узнаем размер диска
+export SPACE_TOTAL=`df -hT $STORAGE`
+
+# Узнаём имя сервера
+export $HOST=`hostname`
 
 # Проверяем наличие директории для бекапов, если директории нет 
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
@@ -30,8 +39,17 @@ if [ ! -d $STORAGE ];
         echo "Идёт создание дампа БД..."
 fi
 
+# Выясняем статус пакета pv в системе.
+PV_OK=$(dpkg-query -W --showformat='${Status}\n' pv|grep "install ok installed")
+
+if [ "" == "$PV_OK" ]; 
+then
+    # Ставим пакет pv.
+    sudo apt-get --force-yes --yes install pv
+fi
+
 # Создаём дамп базы данных, архивируем и называем бекап текущей датой.
-mysqldump --host=$HOST_MYSQL --user=$USER_MYSQL --password=$PASS_MYSQL $DB_MYSQL | gzip > $STORAGE/$(date +%Y-%m-%d).gz
+mysqldump --host=$HOST_MYSQL --user=$USER_MYSQL --password=$PASS_MYSQL $DB_MYSQL | pv -N "Загружено" | gzip > $STORAGE/$(date +%Y-%m-%d).gz
 
 # Информируем пользователя
 echo "OK"
@@ -55,6 +73,9 @@ if crontab -l | grep "$RUN_ME";
     else
         echo "Добавьте задание в Cron."
 fi
+
+# Отправляем письмо с указанием имени сервера на котором выполнился скрипт, размером созданного архива.
+include ./sendemail.sh "$HOST: backup готов!" "$SPACE_USED $SPACE_TOTAL"
 
 # Возвращаем общий результат, иначе возвращается результат выполнения последней команды.
 exit 0

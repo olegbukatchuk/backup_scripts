@@ -2,11 +2,11 @@
 
 # Скрипт настройки сервера MySQL 5.x/6.x
 # Автор:  Олег Букатчук
-# Версия: 0.1
+# Версия: 0.1 alpha
 # e-mail: oleg@bukatchuk.com
 
 # Объявляем переменные для авторизации в MySQL
-export HOST_MYSQL=some_localhost
-export USER_MYSQL=some_login
-export PASS_MYSQL=some_password
-export DB_MYSQL=some_database
+export HOST_MYSQL=localhost
+export USER_MYSQL=login
+export PASS_MYSQL=password
+export DB_MYSQL=database
