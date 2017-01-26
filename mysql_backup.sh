@@ -17,17 +17,17 @@ export RUN_ME=/path/to/script/backup_mysql.sh
 # Создаём константу для директории хранения бекапов.
 export STORAGE=/path/to/backup/mysql
 
-# Узнаем размер занимаемого места созданным бэкапом
+# Узнаем размер директории с бэкапами
 export SPACE_USED=`du -sh $STORAGE/$(date +%Y-%m-%d).gz`
 
-# Узнаем размер диска
+# Узнаем полный размер диска
 export SPACE_TOTAL=`df -hT $STORAGE`
 
 # Узнаём имя сервера
 export $HOST=`hostname`
 
 # Выясняем статус пакета pv в системе и создаём константу.
-PV_OK=$(dpkg-query -W --showformat='${Status}\n' pv|grep "install ok installed")
+PV_OK=$(dpkg-query -W --showformat='${Status}\n' pv | grep "install ok installed")
 
 # Информируем пользователя
 echo "Идёт проверка зависимостей скрипта..."
