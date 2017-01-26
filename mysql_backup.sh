@@ -22,7 +22,7 @@ export STORAGE=/path/to/backup/mysql
 if [ ! -d $STORAGE ];
     then
         # Информируем пользователя
-        echo "В системе нет требуемой директории!"\n
+        echo "В системе нет требуемой директории!\n"
         echo "$STORAGE"
         exit 1
     else
