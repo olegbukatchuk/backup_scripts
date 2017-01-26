@@ -23,11 +23,11 @@ export SPACE_USED=`du -sh $STORAGE`
 # Создаём константу для полного размера диска с бэкапами
 export SPACE_TOTAL=`df -hT $STORAGE`
 
-# Узнаём имя сервера
+# Создаём константу для имени сервера
 export $HOST=`hostname`
 
 # Выясняем статус пакета pv в системе и создаём константу.
-PV_OK=$(dpkg-query -W --showformat='${Status}\n' pv | grep "install ok installed")
+ export PV_OK=$(dpkg-query -W --showformat='${Status}\n' pv | grep "install ok installed")
 
 # Информируем пользователя
 echo "Идёт проверка зависимостей скрипта..."
