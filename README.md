@@ -13,7 +13,7 @@
 ## Установка
 Клонируем репозиторий:
 ```markdown
-git clone https://github.com/olegbukatchuk/backup_scripts
+git clone https://github.com/olegbukatchuk/db_suite
 ```
 Делаем скрипт исполняемым:
 ```markdown
