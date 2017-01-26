@@ -1,4 +1,4 @@
-# DB Suite v.1.0
+# DB Suite v.1.1
 Скрипты для управления и резервного копирования MySQL/PostgreSQL
 
 ## Прочитайте внимательно! 
@@ -17,7 +17,7 @@ git clone https://github.com/olegbukatchuk/db_suite
 ```
 Делаем скрипт исполняемым:
 ```markdown
-sudo chmod +x /path/to/script/backup_mysql.sh
+sudo chmod +x /path/to/db_suite/backup_mysql.sh
 ```
 Выставляем права доступа на директорию хранения бекапов:
 ```markdown
@@ -36,7 +36,7 @@ export PASS_MYSQL=password
 export DB_MYSQL=database
 
 # Создаём константу из абсолютного пути к скрипту.
-export RUN_ME=/path/to/script/backup_mysql.sh
+export RUN_ME=/path/to/db_suite/backup_mysql.sh
 
 # Создаём константу для директории хранения бекапов.
 export STORAGE=/path/to/backup/mysql
@@ -50,23 +50,23 @@ export STORAGE=/path/to/backup/mysql
 export CONNECT_DB=postgresql://password:login@host:5432/database
 
 # Создаём константу из абсолютного пути к скрипту.
-export RUN_ME=/path/to/script/backup_postgresql.sh
+export RUN_ME=/path/to/db_suite/backup_postgresql.sh
 
 # Создаём константу для директории хранения бекапов.
 export STORAGE=/path/to/backup/dir
 ```
 ### Пример работы скрипта
 ```markdown
-user@host:~$ /path/to/script/backup_mysql.sh 
+user@host:~$ /path/to/db_suite/backup_mysql.sh 
 Проверка наличия директории для хранения бекапов...
 OK
 Идёт создание дампа БД...
-Загружено:  623MiB 0:00:20 [30.5MiB/s] [                                <=>            ]
+Загружено:  623MiB 0:00:20 [30.5MiB/s] [  <=>                                                      ]
 OK
 Идёт поиск и удаление старых дампов БД...
 ОК
 Проверка наличия задания в Cron'e...
-0 1 * * * /path/to/backup_mysql.sh
+0 1 * * * /path/to/db_suite/backup_mysql.sh
 OK
 ```
 Все скрипты умеют работать, как с локальным, так и с сетевым сокетом, поэтому задание можно запускать не только на сервере, где находиться база данных, но и на удалённом хосте.
@@ -81,17 +81,17 @@ crontab -e
 
 # Добавляем в конец файла наше задание
 
-0 1 * * * /path/to/scripts/backup_mysql.sh
+0 1 * * * /path/to/db_suite/backup_mysql.sh
 ```
 Сохраняем и перезапускаем Cron:
 
 ```markdown
 sudo service cron restart
 ```
-Для того, чтобы оправлялись e-mail уведомления о выполнении скрипта убедитесь, что в системе стоит утилита mailutils. Установить её можно с помощью данной команды:
+Для того, чтобы оправлялись e-mail уведомления о выполнении скрипта убедитесь, что в системе стоит утилита sendemail. Установить её можно с помощью данной команды:
 
 ```markdown
-sudo apt-get install mailutils
+sudo apt-get install sendemail
 ```
 
 Готово!
