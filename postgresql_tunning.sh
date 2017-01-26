@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Скрипт настройки сервера PostgreSQL
+# Скрипт установки и настройки сервера PostgreSQL
 # Автор:  Олег Букатчук
 # Версия: 0.2 alpha
 # e-mail: oleg@bukatchuk.com
