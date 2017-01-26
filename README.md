@@ -86,7 +86,7 @@ sudo service cron restart
 Для того, чтобы оправлялись e-mail уведомления о выполнении скрипта убедитесь, что в системе стоит утилита mailutils. Установить её можно с помощью данной команды:
 
 ```markdown
-apt-get install mailutils
+sudo apt-get install mailutils
 ```
 
 Готово!
