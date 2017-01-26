@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Скрипт экспорта БД из PostgreSQL 9.x
+# Скрипт экспорта БД из PostgreSQL
 # Автор:  Олег Букатчук
 # Версия: 1.3
 # e-mail: oleg@bukatchuk.com
