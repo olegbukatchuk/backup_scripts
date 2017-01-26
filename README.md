@@ -83,6 +83,12 @@ crontab -e
 ```markdown
 sudo service cron restart
 ```
+Для того, чтобы оправлялись e-mail уведомления о выполнении скрипта убедитесь, что в системе стоит утилита mailutils.
+
+```markdown
+apt-get install mailutils
+```
+
 Готово!
 
 ### Поддержка и контакты
