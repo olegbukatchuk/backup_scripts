@@ -17,7 +17,7 @@ git clone https://github.com/olegbukatchuk/db_suite
 ```
 Делаем скрипт исполняемым:
 ```markdown
-sudo chmod +x /path/to/db_suite/backup_mysql.sh
+sudo chmod +x /path/to/db_suite/mysql_backup.sh
 ```
 Выставляем права доступа на директорию хранения бекапов:
 ```markdown
