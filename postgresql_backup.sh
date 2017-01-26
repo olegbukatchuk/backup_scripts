@@ -2,7 +2,7 @@
 
 # Скрипт экспорта БД из PostgreSQL 9.x
 # Автор:  Олег Букатчук
-# Версия: 1.1
+# Версия: 1.2
 # e-mail: oleg@bukatchuk.com
 
 # Создаём константу для подключеня к базе данных.
@@ -28,17 +28,22 @@ if [ ! -d $STORAGE ];
         echo "OK"
 fi
 
-# Выясняем статус пакета в системе
+# Выясняем статус пакета pv в системе.
 PV_OK=$(dpkg-query -W --showformat='${Status}\n' pv|grep "install ok installed")
-
-# Информируем пользователя
-echo "Проверка доступности утилиты pv: $PV_OK"
 
 if [ "" == "$PV_OK" ]; 
 then
-    echo "Утилита не установлена. Сейчас начнётся установка..."
+    # Ставим пакет pv.
     sudo apt-get --force-yes --yes install pv
-    echo "Установка завершена."
+fi
+
+# Выясняем статус пакета mailutils в системе.
+MAILUTILS_OK=$(dpkg-query -W --showformat='${Status}\n' mailutils|grep "install ok installed")
+
+if [ "" == "$MAILUTILS_OK" ]; 
+then
+    # Ставим пакет pv.
+    sudo apt-get --force-yes --yes install mailutils
 fi
 
 # Информируем пользователя
@@ -71,7 +76,7 @@ if crontab -l | grep "$RUN_ME";
 fi
 
 # Отправляем письмо с указанием имени сервера на котором выполнился скрипт и размером созданного архива.
-hostname && du -sh $STORAGE/$(date +%Y-%m-%d).gz | mail -s "Резервное копирование выполнено успешно." user@domain.com
+ls -lah $STORAGE | mail -s "Резервное копирование выполнено успешно." user@domain.com
 
 # Возвращаем общий результат, иначе возвращается результат выполнения последней команды.
 exit 0
