@@ -2,7 +2,7 @@
 
 # Скрипт экспорта БД из MySQL
 # Автор:  Олег Букатчук
-# Версия: 1.3
+# Версия: 1.4
 # e-mail: oleg@bukatchuk.com
 
 # Объявляем переменные для авторизации в MySQL
@@ -17,10 +17,10 @@ export RUN_ME=/path/to/script/backup_mysql.sh
 # Создаём константу для директории хранения бекапов.
 export STORAGE=/path/to/backup/mysql
 
-# Узнаем размер директории с бэкапами
-export SPACE_USED=`du -sh $STORAGE/$(date +%Y-%m-%d).gz`
+# Создаём константу для размера директории с бэкапами
+export SPACE_USED=`du -sh $STORAGE`
 
-# Узнаем полный размер диска
+# Создаём константу для полного размера диска с бэкапами
 export SPACE_TOTAL=`df -hT $STORAGE`
 
 # Узнаём имя сервера
