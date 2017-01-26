@@ -28,6 +28,19 @@ if [ ! -d $STORAGE ];
         echo "OK"
 fi
 
+# Выясняем статус пакета в системе
+PV_OK=$(dpkg-query -W --showformat='${Status}\n' pv|grep "install ok installed")
+
+# Информируем пользователя
+echo "Проверка доступности утилиты pv: $PV_OK"
+
+if [ "" == "$PV_OK" ]; 
+then
+    echo "Утилита не установлена. Сейчас начнётся установка..."
+    sudo apt-get --force-yes --yes install pv
+    echo "Установка завершена."
+fi
+
 # Информируем пользователя
 echo "Идёт создание дампа БД..."
 
