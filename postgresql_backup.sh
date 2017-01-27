@@ -45,12 +45,13 @@ then
     sudo apt-get --force-yes --yes install pv
 fi
 
-# Проверяем наличие утилиты sendemail, если нет ставим её.
+# Выясняем статус пакета senemail в системе и создаём константу.
 export SENDEMAIL_OK=$(dpkg-query -W --showformat='${Status}\n' sendemail | grep "install ok installed")
 
+# Проверяем наличие утилиты sendemail, если нет ставим её.
 if [ "" == "$SENDEMAIL_OK" ]; 
 then
-    # Ставим пакет sendemail.
+    # Ставим пакет sendemail (для отправки писем).
     sudo apt-get --force-yes --yes install sendemail
 fi
 
