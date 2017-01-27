@@ -2,7 +2,7 @@
 
 # Скрипт отправки e-mail уведомлений
 # Автор:  Олег Букатчук
-# Версия: 0.2
+# Версия: 0.3
 # e-mail: oleg@bukatchuk.com
 
 # Поле "Кому"
@@ -24,15 +24,6 @@ SMTPSERVER=smtp.domain.com
 # Логин и пароль
 SMTPLOGIN=login@domain.com
 SMTPPASS=password
-
-# Выясняем статус пакета sendemail в системе.
-SENDEMAIL_OK=$(dpkg-query -W --showformat='${Status}\n' sendemail|grep "install ok installed")
-
-if [ "" == "$SENDEMAIL_OK" ]; 
-then
-    # Ставим пакет sendemail.
-    sudo apt-get --force-yes --yes install sendemail
-fi
 
 # Отправляем письмо
 /usr/bin/sendEmail -f $FROM -t $MAILTO -u $NAME -m $BODY -s $SMTPSERVER -o tls=no $MAILTO -o message-charset=utf-8 -xu $SMTPLOGIN -xp $SMTPPASS
