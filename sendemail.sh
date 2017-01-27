@@ -2,7 +2,7 @@
 
 # Скрипт отправки e-mail уведомлений
 # Автор:  Олег Букатчук
-# Версия: 0.1
+# Версия: 0.2
 # e-mail: oleg@bukatchuk.com
 
 # Поле "Кому"
@@ -35,4 +35,4 @@ then
 fi
 
 # Отправляем письмо
-/usr/bin/sendEmail -f $FROM -t $MAILTO -o message-charset=utf-8 -u $NAME -m $BODY -s $SMTPSERVER -o tls=yes -xu $SMTPLOGIN -xp $SMTPPASS
+/usr/bin/sendEmail -f $FROM -t $MAILTO -u $NAME -m $BODY -s $SMTPSERVER -o tls=no $MAILTO -o message-charset=utf-8 -xu $SMTPLOGIN -xp $SMTPPASS
