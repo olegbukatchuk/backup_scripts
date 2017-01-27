@@ -2,26 +2,20 @@
 
 # Скрипт экспорта БД из PostgreSQL
 # Автор:  Олег Букатчук
-# Версия: 1.4
+# Версия: 1.5
 # e-mail: oleg@bukatchuk.com
 
 # Создаём константу для подключеня к базе данных.
 export CONNECT_DB=postgresql://password:login@127.0.0.1:5432/database
 
 # Создаём константу из абсолютного пути к скрипту.
-export RUN_ME=/path/to/script/backup_postgresql.sh
+export RUN_ME=/path/to/db_suite/postgresql_backup.sh
 
 # Создаём константу для директории хранения бекапов.
-export STORAGE=/path/to/backup/dir
+export STORAGE=/path/to/backup/postgresql
  
 # Создаём константу для размера директории с бэкапами
 export SPACE_USED=`du -sh $STORAGE`
-
-# Создаём константу для полного размера диска с бэкапами
-export SPACE_TOTAL=`df -hT $STORAGE`
-
-# Создаём константу для имени сервера
-export $HOST=`hostname`
 
 # Информируем пользователя
 echo "Проверка наличия директории для хранения бекапов..."
@@ -96,8 +90,8 @@ fi
 echo "Отправка отчёта на e-mail..."
 
 # Отправляем письмо с указанием имени сервера на котором выполнился скрипт, 
-# датой, размером директории бекапов и полным размером диска.
-. ./sendemail.sh "$HOST: backup на $(date +%Y-%m-%d) готов!" "$SPACE_USED $SPACE_TOTAL"
+# датой, размером директории бекапов.
+. ./sendemail.sh "$HOSTNAME: backup на $(date +%Y-%m-%d) готов!" "$SPACE_USED"
 
 # Информируем пользователя
 echo "OK"
