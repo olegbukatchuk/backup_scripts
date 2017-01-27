@@ -2,23 +2,27 @@
 
 # Скрипт экспорта БД из PostgreSQL
 # Автор:  Олег Букатчук
-# Версия: 1.5
+# Версия: 1.6
 # e-mail: oleg@bukatchuk.com
 
 # Создаём константу для подключеня к базе данных.
 export CONNECT_DB=postgresql://password:login@127.0.0.1:5432/database
 
-# Создаём константу из абсолютного пути к директории скриптов.
-export DB_SUITE=/path/to/db_suite
+# Создаём константу из абсолютного пути к директории скриптов и выставляем правильные права доступа.
+export DB_SUITE=/path/to/db_suite && sudo chown -R user:user $DB_SUITE && sudo chmod -R 770 $DB_SUITE
 
-# Создаём константу из абсолютного пути к скрипту.
-export RUN_ME=/path/to/db_suite/postgresql_backup.sh
+# Создаём константу из абсолютного пути к скрипту и делаем скрипт исполняемым.
+export RUN_ME=/path/to/db_suite/postgresql_backup.sh && sudo chmod +x $RUN_ME
 
 # Создаём константу для директории хранения бекапов.
 export STORAGE=/path/to/backup/postgresql
  
-# Создаём константу для размера директории с бэкапами
+# Создаём константу для размера директории с бэкапами.
 export SPACE_USED=`du -sh $STORAGE`
+
+# Режим отладки скрипта (любое действие можно отслеживать: любая команда >> $LOG_FILE)
+# export LOG_DIR=/var/log/db_suite && sudo mkdir $LOG_DIR
+# export LOG_FILE=$LOG_DIR/postgresql_backup.log && sudo touch $LOG_DIR/$LOG_FILE
 
 # Информируем пользователя
 echo "Проверка наличия директории для хранения бекапов..."
@@ -48,7 +52,7 @@ then
     sudo apt-get --force-yes --yes install pv
 fi
 
-# Выясняем статус пакета senemail в системе и создаём константу.
+# Выясняем статус пакета sendemail в системе и создаём константу.
 export SENDEMAIL_OK=$(dpkg-query -W --showformat='${Status}\n' sendemail | grep "install ok installed")
 
 # Проверяем наличие утилиты sendemail, если нет ставим её.
