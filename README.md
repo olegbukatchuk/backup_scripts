@@ -1,4 +1,4 @@
-# DB Suite v.1.4 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+# DB Suite v.1.6 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 Скрипты для управления и резервного копирования MySQL/PostgreSQL 
 
 ### Возможности скриптов
