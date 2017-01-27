@@ -38,7 +38,7 @@ if [ ! -d $STORAGE ];
 fi
 
 # Выясняем статус пакета pv в системе и создаём константу.
-PV_OK=$(dpkg-query -W --showformat='${Status}\n' pv|grep "install ok installed")
+export PV_OK=$(dpkg-query -W --showformat='${Status}\n' pv | grep "install ok installed")
 
 # Информируем пользователя
 echo "Идёт проверка зависимостей скрипта..."
@@ -49,6 +49,15 @@ then
     # Ставим пакет pv (для отрисовки прогресс-бара).
     echo "Установка зависимостей скрипта..."
     sudo apt-get --force-yes --yes install pv
+fi
+
+# Проверяем наличие утилиты sendemail, если нет ставим её.
+export SENDEMAIL_OK=$(dpkg-query -W --showformat='${Status}\n' sendemail | grep "install ok installed")
+
+if [ "" == "$SENDEMAIL_OK" ]; 
+then
+    # Ставим пакет sendemail.
+    sudo apt-get --force-yes --yes install sendemail
 fi
 
 # Информируем пользователя
@@ -88,7 +97,7 @@ echo "Отправка отчёта на e-mail..."
 
 # Отправляем письмо с указанием имени сервера на котором выполнился скрипт, 
 # датой, размером директории бекапов и полным размером диска.
-include ./sendemail.sh "$HOST: backup на $(date +%Y-%m-%d) готов!" "$SPACE_USED $SPACE_TOTAL"
+. ./sendemail.sh "$HOST: backup на $(date +%Y-%m-%d) готов!" "$SPACE_USED $SPACE_TOTAL"
 
 # Информируем пользователя
 echo "OK"
