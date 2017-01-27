@@ -8,6 +8,9 @@
 # Создаём константу для подключеня к базе данных.
 export CONNECT_DB=postgresql://password:login@127.0.0.1:5432/database
 
+# Создаём константу из абсолютного пути к директории скриптов.
+export DB_SUITE=/path/to/db_suite
+
 # Создаём константу из абсолютного пути к скрипту.
 export RUN_ME=/path/to/db_suite/postgresql_backup.sh
 
@@ -92,7 +95,7 @@ echo "Отправка отчёта на e-mail..."
 
 # Отправляем письмо с указанием имени сервера на котором выполнился скрипт, 
 # датой, размером директории бекапов.
-. ./sendemail.sh "$HOSTNAME: backup на $(date +%Y-%m-%d) готов!" "$SPACE_USED"
+. $DB_SUITE/sendemail.sh "$HOSTNAME: backup на $(date +%Y-%m-%d) готов!" "$SPACE_USED"
 
 # Информируем пользователя
 echo "OK"
