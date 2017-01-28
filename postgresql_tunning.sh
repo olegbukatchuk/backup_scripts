@@ -2,12 +2,15 @@
 
 # Скрипт установки и настройки сервера PostgreSQL
 # Автор:  Олег Букатчук
-# Версия: 0.2 alpha
+# Версия: 0.3 alpha
 # e-mail: oleg@bukatchuk.com
 
+<<<<<<< HEAD
+=======
 # Подключаем файл c настройками DB Suite
 . ./db_suite.conf
 
+>>>>>>> dev
 # Подключаем FTP и монтируем его в директорию $FTP
 curlftpfs -v -o iocharset=UTF-8 ftp://user:password@ftp.domain.ru/ /mnt/ftp
 
