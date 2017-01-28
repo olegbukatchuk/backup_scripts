@@ -9,4 +9,4 @@
 . ./db_suite.conf
 
 # Отправляем письмо
-/usr/bin/sendEmail -f $FROM -t $MAILTO -u $NAME -m $BODY -s $SMTPSERVER -o tls=no $MAILTO -o message-charset=utf-8 -xu $SMTPLOGIN -xp $SMTPPASS
+/usr/bin/sendEmail -f $FROM -t $MAILTO -u $NAME -m $BODY -s $SMTPSERVER -o message-charset=utf-8 -o tls=no $MAILTO -xu $SMTPLOGIN -xp $SMTPPASS
