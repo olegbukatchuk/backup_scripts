@@ -22,9 +22,6 @@ if [ ! -d $STORAGE ];
         echo "OK"
 fi
 
-# Выясняем статус пакета pv в системе и создаём константу.
-export PV_OK=$(dpkg-query -W --showformat='${Status}\n' pv | grep "install ok installed")
-
 # Информируем пользователя
 echo "Идёт проверка зависимостей скрипта..."
 
