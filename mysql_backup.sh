@@ -41,8 +41,13 @@ if [ ! -d $STORAGE ];
         echo "Идёт создание дампа БД..."
 fi
 
-# Создаём дамп базы данных, рисуем прогресс-бар, архивируем и называем бекап текущей датой.
-mysqldump --host=$HOST_MYSQL --user=$USER_MYSQL --password=$PASS_MYSQL $DB_MYSQL | pv -N "Загружено" | gzip > $STORAGE/$(date +%Y-%m-%d).gz
+# Создаём дамп базы данных, рисуем прогресс бар, называем бекап текущей датой и архивируем его.
+mysqldump --host=$HOST_MYSQL \
+          --user=$USER_MYSQL \
+          --password=$PASS_MYSQL $DB_MYSQL \
+          | pv -N "Загружено" \
+          > $STORAGE/$(date +%Y-%m-%d).sql \
+          | gzip > $STORAGE/$(date +%Y-%m-%d).sql.gz
 
 # Информируем пользователя
 echo "OK"

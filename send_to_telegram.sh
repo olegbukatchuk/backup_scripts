@@ -2,20 +2,19 @@
 
 # Скрипт отправки сообщений в Telegram
 # Автор:  Олег Букатчук
-# Версия: 0.2
+# Версия: 0.2 beta
 # e-mail: oleg@bukatchuk.com
 
-# Определяем переменную для аккаунта.
-# Замените 'account_name' на имя вашего Telegram аккаунта
-to=account_name
+# Подключаем файл c настройками DB Suite
+. ./db_suite.conf
 
-# 
+# Функция telegram-cli
 function show_usage {
   echo "Usage $0 [message]"
   exit
 }
 
-# 
+# Условие отправки сообщения
 if [ $# -lt 1 ]
   then
     show_usage

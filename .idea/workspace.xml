@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88c4b1b6-6b7f-4c65-87a1-75b2024affdf" name="Default" comment="" />
+    <list default="true" id="88c4b1b6-6b7f-4c65-87a1-75b2024affdf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_suite.conf" afterPath="$PROJECT_DIR$/db_suite.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysql_backup.sh" afterPath="$PROJECT_DIR$/mysql_backup.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysql_tunning.sh" afterPath="$PROJECT_DIR$/mysql_tunning.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/postgresql_backup.sh" afterPath="$PROJECT_DIR$/postgresql_backup.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/send_to_telegram.sh" afterPath="$PROJECT_DIR$/send_to_telegram.sh" />
+    </list>
     <ignored path="db_suite.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -21,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="db_suite.conf" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db_suite.conf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db_suite.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+            <state relative-caret-position="440">
+              <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -34,18 +41,18 @@
       <file leaf-file-name="mysql_backup.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysql_backup.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            <state relative-caret-position="280">
+              <caret line="49" column="52" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mysql_tunning.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mysql_tunning.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mysql_tunning.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state relative-caret-position="154">
+              <caret line="11" column="75" selection-start-line="11" selection-start-column="75" selection-end-line="11" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -54,8 +61,8 @@
       <file leaf-file-name="postgresql_backup.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/postgresql_backup.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+            <state relative-caret-position="756">
+              <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -64,28 +71,8 @@
       <file leaf-file-name="postgresql_tunning.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/postgresql_tunning.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="send_to_email.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/send_to_email.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="11" column="97" selection-start-line="11" selection-start-column="97" selection-end-line="11" selection-end-column="97" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="send_to_telegram.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/send_to_telegram.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="140">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -99,11 +86,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/send_to_telegram.sh" />
         <option value="$PROJECT_DIR$/postgresql_tunning.sh" />
-        <option value="$PROJECT_DIR$/db_suite.conf" />
-        <option value="$PROJECT_DIR$/mysql_tunning.sh" />
         <option value="$PROJECT_DIR$/send_to_email.sh" />
+        <option value="$PROJECT_DIR$/db_suite.conf" />
+        <option value="$PROJECT_DIR$/send_to_telegram.sh" />
+        <option value="$PROJECT_DIR$/postgresql_backup.sh" />
+        <option value="$PROJECT_DIR$/mysql_backup.sh" />
+        <option value="$PROJECT_DIR$/mysql_tunning.sh" />
       </list>
     </option>
   </component>
@@ -235,15 +224,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485620733755</updated>
-      <workItem from="1485620736000" duration="2198000" />
+      <workItem from="1485620736000" duration="3360000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2198000" />
+    <option name="totallyTimeSpent" value="3360000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="837" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="837" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17525035" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
@@ -281,14 +270,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/send_to_telegram.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -300,6 +281,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db_suite.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/send_to_telegram.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/send_to_email.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -308,42 +305,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/postgresql_tunning.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysql_tunning.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysql_backup.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="280">
+          <caret line="49" column="52" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/postgresql_backup.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        <state relative-caret-position="756">
+          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_suite.conf">
+    <entry file="file://$PROJECT_DIR$/postgresql_tunning.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+        <state relative-caret-position="140">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql_tunning.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="11" column="75" selection-start-line="11" selection-start-column="75" selection-end-line="11" selection-end-column="75" />
           <folding />
         </state>
       </provider>
