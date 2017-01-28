@@ -1,4 +1,4 @@
-# DB Suite v.1.6 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+# DB Suite v.1.7 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 Скрипты для управления и резервного копирования MySQL/PostgreSQL 
 
 ### Возможности скриптов
@@ -6,6 +6,7 @@
 - Ротация бекапов (поиск и удаление старых дампов).
 - Отправка e-mail уведомлений (через SMTP-сервер).
 - Режим отладки (запись выполнения любой команды в скриптах).
+- Общий файл конфигарации (для всех скриптов).
 
 ### В разработке
 - Установка и настройка сервера MySQL (деплой нового сервера). 
