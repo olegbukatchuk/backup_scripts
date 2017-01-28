@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Скрипт установки и настройки сервера MySQL
+# Скрипт установки и настройки сервера PostgreSQL
 # Автор:  Олег Букатчук
 # Версия: 0.4 alpha
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем файл c настройками DB Suite
-. ./db_suite.conf
+. ../db_suite.conf
 
 # Подключаем FTP и монтируем его в директорию $FTP
 curlftpfs -v -o iocharset=UTF-8 ftp://user:password@ftp.domain.ru/ /mnt/ftp
@@ -14,13 +14,13 @@ curlftpfs -v -o iocharset=UTF-8 ftp://user:password@ftp.domain.ru/ /mnt/ftp
 # Информируем пользователя
 echo "Проверка текущей конфигурации..."
 
-# Проверяем наличие конфигурационных файлов, если файлов нет
+# Проверяем наличие конфигурационных файлов, если файлов нет 
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
-if [ ! -d $CONFIG_MYSQL ];
+if [ ! -d $CONFIG_POSTGRESQL ];
     then
         # Информируем пользователя
-        echo "В системе нет конфигурационных файлов сервера MySQL!"\n
-        echo "$CONFIG_MYSQL"
+        echo "В системе нет конфигурационных файлов сервера PostgreSQL!"\n
+        echo "$CONFIG_POSTGRESQL"
         # Остановка скрипта
         exit 1
     else
@@ -28,9 +28,9 @@ if [ ! -d $CONFIG_MYSQL ];
         echo "OK"
 fi
 
-# Проверяем наличие эталонных файлов, если файлов нет
+# Проверяем наличие эталонных файлов, если файлов нет 
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
-if [ ! -d $FTP ];
+if [ ! -d $FTP ]; 
     then
         # Информируем пользователя
         echo "В системе нет эталонных конфигурационных файлов!"\n
@@ -46,12 +46,12 @@ fi
 echo "Применение эталонной конфигурации сервера..."
 
 # Перезагужаем сервер для применения новой конфигурации
-sudo service mysql restart
+sudo service postgresql restart
 
 # Информируем пользователя
 echo "OK"
 
 # Выводим статус сервера
-sudo service mysql status
+sudo service postgresql status
 
-echo "Настройка сервера MySQL выполнена успешно!"
+echo "Настройка сервера PostgreSQL выполнена успешно!"

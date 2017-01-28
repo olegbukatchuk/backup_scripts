@@ -6,7 +6,7 @@
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем файл c настройками DB Suite
-. ./db_suite.conf
+. ../db_suite.conf
 
 # Функция telegram-cli
 function show_usage {
