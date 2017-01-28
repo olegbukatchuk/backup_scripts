@@ -22,7 +22,7 @@ fi
 if [ "" == "$SENDEMAIL_OK" ]; 
 then
     # Ставим пакет sendemail.
-    sudo apt-get --force-yes --yes install sendemail
+    sudo apt-get --allow --yes install sendemail
 fi
 
 # Информируем пользователя
