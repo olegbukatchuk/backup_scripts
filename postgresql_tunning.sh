@@ -2,7 +2,7 @@
 
 # Скрипт установки и настройки сервера PostgreSQL
 # Автор:  Олег Букатчук
-# Версия: 0.3 alpha
+# Версия: 0.4 alpha
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем файл c настройками DB Suite
@@ -54,4 +54,4 @@ echo "OK"
 # Выводим статус сервера
 sudo service postgresql status
 
-echo "Настройка сервера MySQL выполнена успешно!"
+echo "Настройка сервера PostgreSQL выполнена успешно!"
