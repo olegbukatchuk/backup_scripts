@@ -2,12 +2,11 @@
 
 # Скрипт отправки сообщений в Telegram
 # Автор:  Олег Букатчук
-# Версия: 0.2
+# Версия: 0.3
 # e-mail: oleg@bukatchuk.com
 
-# Определяем переменную для аккаунта.
-# Замените 'account_name' на имя вашего Telegram аккаунта
-to=account_name
+# Подключаем файл c настройками DB Suite
+. ./db_suite.conf
 
 # 
 function show_usage {

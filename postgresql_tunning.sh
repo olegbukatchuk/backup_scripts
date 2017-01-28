@@ -2,34 +2,22 @@
 
 # Скрипт установки и настройки сервера PostgreSQL
 # Автор:  Олег Букатчук
-# Версия: 0.2 alpha
+# Версия: 0.3 alpha
 # e-mail: oleg@bukatchuk.com
-
-# Создаём константу для подключеня к базе данных.
-export CONNECT_DB=postgresql://password:login@127.0.0.1:5432/database
-
-# Создаём константу из абсолютного пути к скрипту.
-export RUN_ME=/path/to/script/postgresql_tunning.sh
-
-# Создаём константу для директории хранения конфигов сервера PostgreSQL.
-export CONFIG=/etc/postgresql
 
 # Подключаем FTP и монтируем его в директорию $FTP
 curlftpfs -v -o iocharset=UTF-8 ftp://user:password@ftp.domain.ru/ /mnt/ftp
-
-# Создаём константу для директории монтирования FTP.
-export FTP=/mnt/ftp/db/config
 
 # Информируем пользователя
 echo "Проверка текущей конфигурации..."
 
 # Проверяем наличие конфигурационных файлов, если файлов нет 
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
-if [ ! -d $CONFIG ]; 
+if [ ! -d $CONFIG_POSTGRESQL ];
     then
         # Информируем пользователя
         echo "В системе нет конфигурационных файлов сервера PostgreSQL!"\n
-        echo "$CONFIG"
+        echo "$CONFIG_POSTGRESQL"
         # Остановка скрипта
         exit 1
     else
