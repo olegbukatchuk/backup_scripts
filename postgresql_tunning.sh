@@ -8,7 +8,6 @@
 # Подключаем файл c настройками DB Suite
 . ./db_suite.conf
 
->>>>>>> dev
 # Подключаем FTP и монтируем его в директорию $FTP
 curlftpfs -v -o iocharset=UTF-8 ftp://user:password@ftp.domain.ru/ /mnt/ftp
 
@@ -55,4 +54,4 @@ echo "OK"
 # Выводим статус сервера
 sudo service postgresql status
 
-echo "Настройка сервера PostgreSQL выполнена успешно!"
+echo "Настройка сервера MySQL выполнена успешно!"

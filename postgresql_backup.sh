@@ -30,14 +30,14 @@ if [ "" == "$PV_OK" ];
 then
     # Ставим пакет pv (для отрисовки прогресс-бара).
     echo "Установка зависимостей скрипта..."
-    sudo apt-get --force-yes --yes install pv
+    sudo apt-get --allow --yes install pv
 fi
 
 # Проверяем наличие утилиты sendemail, если нет ставим её.
 if [ "" == "$SENDEMAIL_OK" ]; 
 then
     # Ставим пакет sendemail (для отправки писем).
-    sudo apt-get --force-yes --yes install sendemail
+    sudo apt-get --allow --yes install sendemail
 fi
 
 # Информируем пользователя
