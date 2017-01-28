@@ -2,27 +2,11 @@
 
 # Скрипт экспорта БД из PostgreSQL
 # Автор:  Олег Букатчук
-# Версия: 1.6
+# Версия: 1.7
 # e-mail: oleg@bukatchuk.com
 
-# Создаём константу для подключеня к базе данных.
-export CONNECT_DB=postgresql://password:login@127.0.0.1:5432/database
-
-# Создаём константу из абсолютного пути к директории скриптов и выставляем правильные права доступа.
-export DB_SUITE=/path/to/db_suite && sudo chown -R user:user $DB_SUITE && sudo chmod -R 770 $DB_SUITE
-
-# Создаём константу из абсолютного пути к скрипту и делаем скрипт исполняемым.
-export RUN_ME=/path/to/db_suite/postgresql_backup.sh && sudo chmod +x $RUN_ME
-
-# Создаём константу для директории хранения бекапов.
-export STORAGE=/path/to/backup/postgresql
- 
-# Создаём константу для размера директории с бэкапами.
-export SPACE_USED=`du -sh $STORAGE`
-
-# Режим отладки скрипта (любое действие можно отслеживать: любая команда >> $LOG_FILE)
-# export LOG_DIR=/var/log/db_suite && sudo mkdir $LOG_DIR
-# export LOG_FILE=$LOG_DIR/postgresql_backup.log && sudo touch $LOG_DIR/$LOG_FILE
+# Подключаем файл c настройками DB Suite
+. ./db_suite.conf
 
 # Информируем пользователя
 echo "Проверка наличия директории для хранения бекапов..."
