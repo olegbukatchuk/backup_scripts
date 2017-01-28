@@ -77,7 +77,7 @@ echo "Отправка отчёта на e-mail..."
 
 # Отправляем письмо с указанием имени сервера на котором выполнился скрипт, 
 # датой, размером директории бекапов.
-. $DB_SUITE/sendemail.sh "$SERVER_NAME: backup $(date +%Y-%m-%d) готов!" "$SPACE_USED"
+. ../to_email.sh "$SERVER_NAME: backup $(date +%Y-%m-%d) готов!" "$SPACE_USED"
 
 # Информируем пользователя
 echo "OK"
