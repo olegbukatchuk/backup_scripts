@@ -5,8 +5,6 @@
 # Версия: 0.3 alpha
 # e-mail: oleg@bukatchuk.com
 
-<<<<<<< HEAD
-=======
 # Подключаем файл c настройками DB Suite
 . ./db_suite.conf
 
