@@ -2,11 +2,10 @@
 
 # Скрипт установки и настройки сервера MySQL
 # Автор:  Олег Букатчук
-# Версия: 0.1 alpha
+# Версия: 0.2 alpha
 # e-mail: oleg@bukatchuk.com
 
-# Объявляем переменные для авторизации в MySQL
-export HOST_MYSQL=localhost
-export USER_MYSQL=login
-export PASS_MYSQL=password
-export DB_MYSQL=database
+# Подключаем файл c настройками DB Suite
+. ./db_suite.conf
+
+
