@@ -22,7 +22,7 @@ git clone https://github.com/olegbukatchuk/db_suite
 
 ### Пример работы скрипта
 ```markdown
-user@host:~$ /path/to/db_suite/mysql_backup.sh 
+user@host:~$ /path/to/db_suite/postgresql_backup.sh 
 Проверка наличия директории для хранения бекапов...
 OK
 Идёт создание дампа БД...
@@ -31,7 +31,7 @@ OK
 Идёт поиск и удаление старых дампов БД...
 ОК
 Проверка наличия задания в Cron'e...
-0 1 * * * /path/to/db_suite/mysql_backup.sh
+0 1 * * * /path/to/db_suite/postgresql_backup.sh
 OK
 ```
 Все скрипты умеют работать, как с локальным, так и с сетевым сокетом, поэтому задание можно запускать не только на сервере, где находиться база данных, но и на удалённом хосте.
@@ -45,7 +45,7 @@ crontab -e
 
 # Добавляем в конец файла наше задание
 
-0 1 * * * /path/to/db_suite/mysql_backup.sh
+0 1 * * * /path/to/db_suite/postgresql_backup.sh
 ```
 Сохраняем и перезапускаем Cron:
 
