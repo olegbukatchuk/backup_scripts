@@ -33,7 +33,7 @@ fi
 if [ ! -d $CONFIG_MYSQL ];
     then
         # Информируем пользователя
-        echo "В системе нет конфигурационных файлов сервера MySQL!"\n
+        echo "В системе нет конфигурационных файлов MySQL!"\n
         echo "$CONFIG_MYSQL"
         echo "Идёт установка MySQL..."
         # Установка PostgreSQL
