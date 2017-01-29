@@ -33,7 +33,7 @@ fi
 if [ ! -d $CONFIG_POSTGRESQL ];
     then
         # Информируем пользователя
-        echo "В системе нет конфигурационных файлов сервера PostgreSQL!"\n
+        echo "В системе нет конфигурационных файлов PostgreSQL!"\n
         echo "$CONFIG_POSTGRESQL"
         echo "Идёт установка PostgreSQL..."
         # Установка PostgreSQL
