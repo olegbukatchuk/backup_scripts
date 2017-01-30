@@ -33,8 +33,6 @@ fi
 if [ ! -d $CONFIG_POSTGRESQL ];
     then
         # Информируем пользователя
-        echo "В системе нет конфигурационных файлов PostgreSQL!"\n
-        echo "$CONFIG_POSTGRESQL"
         echo "Идёт установка PostgreSQL..."
         # Установка PostgreSQL
         sudo apt-get update && sudo apt-get --allow --yes install postgresql-9.6

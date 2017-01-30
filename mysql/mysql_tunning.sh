@@ -33,8 +33,6 @@ fi
 if [ ! -d $CONFIG_MYSQL ];
     then
         # Информируем пользователя
-        echo "В системе нет конфигурационных файлов MySQL!"\n
-        echo "$CONFIG_MYSQL"
         echo "Идёт установка MySQL..."
         # Установка PostgreSQL
         sudo apt-get update && sudo apt-get --allow --yes install mysql-server-5.6
