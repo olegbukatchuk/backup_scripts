@@ -47,7 +47,7 @@ fi
 # Информируем пользователя
 echo "Применение эталонной конфигурации сервера..."
 
-
+sudo cp $FTP_POSTGRESQL $CONFIG_POSTGRESQL
 
 # Перезагужаем сервер для применения новой конфигурации
 sudo service postgresql restart
