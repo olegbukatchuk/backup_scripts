@@ -52,10 +52,12 @@ crontab -e
 ```markdown
 sudo service cron restart
 ```
-ВАЖНО! Для того, чтобы оправлялись e-mail уведомления о выполнении скрипта убедитесь, что в системе стоит утилита sendemail. Установить её можно с помощью данной команды:
+ВАЖНО! После запуска скрипты проверяют наличие зависимостей в системе и если нужных утилит нет, то происходит их автоматическая установка. Это равносильно команде:
 
 ```markdown
-sudo apt-get install sendemail
+sudo apt-get install sendemail && \
+sudo apt-get install telegram-cli && \
+sudo apt-get install pv
 ```
 
 Готово!
