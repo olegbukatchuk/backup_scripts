@@ -39,15 +39,12 @@ if [ ! -d $CONFIG_MYSQL ];
         # Установка PostgreSQL
         sudo apt-get update && sudo apt-get --allow --yes install mysql-server-5.6
     else
-        # Информируем пользователя
-        echo "Копирование"
-
+        # Копирование конфигурации
+        sudo cp $FTP_MYSQL $CONFIG_MYSQL
 fi
 
 # Информируем пользователя
 echo "Применение эталонной конфигурации сервера..."
-
-sudo cp $FTP_MYSQL $CONFIG_MYSQL
 
 # Перезагужаем сервер для применения новой конфигурации
 sudo service mysql restart
