@@ -39,15 +39,12 @@ if [ ! -d $CONFIG_POSTGRESQL ];
         # Установка PostgreSQL
         sudo apt-get update && sudo apt-get --allow --yes install postgresql-9.6
     else
-        # Информируем пользователя
-        echo "Копирование"
-
+        # Копирование конфигурации
+        sudo cp $FTP_POSTGRESQL $CONFIG_POSTGRESQL
 fi
 
 # Информируем пользователя
 echo "Применение эталонной конфигурации сервера..."
-
-sudo cp $FTP_POSTGRESQL $CONFIG_POSTGRESQL
 
 # Перезагужаем сервер для применения новой конфигурации
 sudo service postgresql restart
