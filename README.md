@@ -60,8 +60,6 @@ sudo apt-get install telegram-cli && \
 sudo apt-get install pv
 ```
 
-Готово!
-
 ## Поддержка и контакты
 
 Есть вопрос или предложение? Свяжитесь со мной любым удобным вам способом из представленных у меня на сайте [bukatchuk.com](https://bukatchuk.com/contacts/).
