@@ -9,6 +9,32 @@
 . ../db_suite.conf
 
 # Информируем пользователя
+echo "Идёт проверка зависимостей скрипта..."
+
+# Проверяем наличие утилиты pv, если нет ставим её.
+if [ "" == "$PV_OK" ];
+then
+    # Ставим пакет pv (для отрисовки прогресс-бара).
+    echo "Установка зависимостей скрипта..."
+    sudo apt-get --allow --yes install pv
+fi
+
+if [ "" == "$SENDEMAIL_OK" ];
+then
+    # Ставим пакет sendemail.
+    sudo apt-get --allow --yes install sendemail
+fi
+
+# Информируем пользователя
+echo "OK"
+
+if [ "" == "$TELEGRAM_CLI_OK" ];
+then
+    # Ставим пакет telegram-cli.
+    sudo dpkg -i $PACKAGE/telegram-cli_1.0.6-1_amd64.deb
+fi
+
+# Информируем пользователя
 echo "Проверка конфигурации..."
 
 # Проверяем наличие эталонных файлов, если файлов нет
