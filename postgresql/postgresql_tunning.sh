@@ -6,7 +6,7 @@
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем файл c настройками DB Suite
-source ../db_suite.sh
+source "../db_suite.sh"
 
 # Информируем пользователя
 echo "Идёт проверка зависимостей скрипта..."
@@ -76,7 +76,7 @@ echo "Настройка сервера PostgreSQL выполнена успеш
 echo "Отправка отчёта на e-mail..."
 
 # Отправляем письмо с указанием имени сервера на котором выполнился скрипт.
-source $NOTICE/email.sh "Настройка $SERVER_NAME: сервера PostgreSQL установлен!" "$SPACE_USED"
+source "$NOTICE/email.sh" "Настройка $SERVER_NAME: сервера PostgreSQL установлен!" "$SPACE_USED"
 
 # Информируем пользователя
 echo "OK"

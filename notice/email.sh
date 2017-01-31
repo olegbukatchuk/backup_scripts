@@ -6,7 +6,7 @@
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем файл c настройками DB Suite
-source ../db_suite.sh
+source "../db_suite.sh"
 
 # Отправляем письмо
 /usr/bin/sendEmail -f $FROM -t $MAILTO -u $NAME -m $BODY -s $SMTP_SERVER \
