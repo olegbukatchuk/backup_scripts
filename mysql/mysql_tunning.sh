@@ -9,7 +9,7 @@
 . ../db_suite.conf
 
 # Информируем пользователя
-echo "Проверка текущей конфигурации..."
+echo "Проверка конфигурации..."
 
 # Проверяем наличие эталонных файлов, если файлов нет
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
@@ -32,7 +32,7 @@ if [ ! -d $LOCAL_MYSQL ];
         # Информируем пользователя
         echo "Идёт установка MySQL..."
         # Установка PostgreSQL
-        sudo apt-get update && sudo apt-get --allow --yes install mysql-server-5.6
+        sudo apt-get update && sudo apt-get --allow --yes install mysql-server-5.5
     else
         # Копирование конфигурации
         sudo cp $DEFAULT_MYSQL $LOCAL_MYSQL
