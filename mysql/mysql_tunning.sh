@@ -2,11 +2,11 @@
 
 # Скрипт установки и настройки сервера MySQL
 # Автор:  Олег Букатчук
-# Версия: 0.9
+# Версия: 1.9
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем файл c настройками DB Suite
-. ../db_suite.conf
+source ../db_suite.sh
 
 # Информируем пользователя
 echo "Идёт проверка зависимостей скрипта..."
@@ -27,13 +27,6 @@ fi
 
 # Информируем пользователя
 echo "OK"
-
-if [ "" == "$TELEGRAM_CLI_OK" ];
-then
-    # Ставим пакеты libjansson4, telegram-cli.
-    sudo apt-get --force-yes --yes install libjansson4
-    sudo dpkg -i $PACKAGE/telegram-cli_1.0.6-1_amd64.deb
-fi
 
 # Информируем пользователя
 echo "Проверка конфигурации..."
@@ -82,10 +75,8 @@ echo "Настройка сервера MySQL выполнена успешно!
 # Информируем пользователя
 echo "Отправка отчёта на e-mail и в Telegram..."
 
-# Отправляем письмо и push-уведомление в Telegram с указанием имени сервера
-# на котором выполнился скрипт, датой, размером директории бекапов.
-. $NOTICE/email.sh "Настройка $SERVER_NAME: сервер MySQL установлен!" "$SPACE_USED"
-. $NOTICE/telegram.sh "Настройка $SERVER_NAME: сервер MySQL установлен!" "$SPACE_USED"
+# Отправляем письмо с указанием имени сервера на котором выполнился скрипт.
+source $NOTICE/email.sh "Настройка $SERVER_NAME: сервер MySQL установлен!" "$SPACE_USED"
 
 # Информируем пользователя
 echo "OK"
