@@ -6,7 +6,7 @@
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем файл c настройками DB Suite
-source ../db_suite.sh
+source "../db_suite.sh"
 
 # Информируем пользователя
 echo "Идёт проверка зависимостей скрипта..."
