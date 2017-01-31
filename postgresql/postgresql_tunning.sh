@@ -9,7 +9,7 @@
 . ../db_suite.conf
 
 # Информируем пользователя
-echo "Проверка текущей конфигурации..."
+echo "Проверка конфигурации..."
 
 # Проверяем наличие эталонных файлов, если файлов нет
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
@@ -32,7 +32,7 @@ if [ ! -d $LOCAL_POSTGRESQL ];
         # Информируем пользователя
         echo "Идёт установка PostgreSQL..."
         # Установка PostgreSQL
-        sudo apt-get update && sudo apt-get --allow --yes install postgresql-9.6
+        sudo apt-get update && sudo apt-get --allow --yes install postgresql-9.4
     else
         # Копирование конфигурации
         sudo cp $DEFAULT_POSTGRESQL $LOCAL_POSTGRESQL
