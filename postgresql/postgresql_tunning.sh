@@ -2,25 +2,22 @@
 
 # Скрипт установки и настройки сервера PostgreSQL
 # Автор:  Олег Букатчук
-# Версия: 0.8
+# Версия: 0.9
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем файл c настройками DB Suite
 . ../db_suite.conf
-
-# Подключаем FTP и монтируем его в директорию $FTP
-curlftpfs -v -o iocharset=UTF-8 ftp://user:password@ftp.domain.ru/ /mnt/ftp
 
 # Информируем пользователя
 echo "Проверка текущей конфигурации..."
 
 # Проверяем наличие эталонных файлов, если файлов нет
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
-if [ ! -f $FTP_POSTGRESQL ];
+if [ ! -f $DEFAULT_POSTGRESQL ];
     then
         # Информируем пользователя
         echo "В системе нет эталонных конфигурационных файлов!"\n
-        echo "$FTP_POSTGRESQL"
+        echo "$DEFAULT_POSTGRESQL"
         # Остановка скрипта
         exit 1
     else
@@ -30,7 +27,7 @@ fi
 
 # Проверяем наличие конфигурационных файлов, если файлов нет
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
-if [ ! -d $CONFIG_POSTGRESQL ];
+if [ ! -d $LOCAL_POSTGRESQL ];
     then
         # Информируем пользователя
         echo "Идёт установка PostgreSQL..."
@@ -38,7 +35,7 @@ if [ ! -d $CONFIG_POSTGRESQL ];
         sudo apt-get update && sudo apt-get --allow --yes install postgresql-9.6
     else
         # Копирование конфигурации
-        sudo cp $FTP_POSTGRESQL $CONFIG_POSTGRESQL
+        sudo cp $DEFAULT_POSTGRESQL $LOCAL_POSTGRESQL
 fi
 
 # Информируем пользователя

@@ -2,25 +2,22 @@
 
 # Скрипт установки и настройки сервера MySQL
 # Автор:  Олег Букатчук
-# Версия: 0.8
+# Версия: 0.9
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем файл c настройками DB Suite
 . ../db_suite.conf
-
-# Подключаем FTP и монтируем его в директорию $FTP
-curlftpfs -v -o iocharset=UTF-8 ftp://user:password@ftp.domain.ru/ /mnt/ftp
 
 # Информируем пользователя
 echo "Проверка текущей конфигурации..."
 
 # Проверяем наличие эталонных файлов, если файлов нет
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
-if [ ! -d $FTP_MYSQL ];
+if [ ! -d $DEFAULT_MYSQL ];
     then
         # Информируем пользователя
         echo "В системе нет эталонных конфигурационных файлов!"\n
-        echo "$FTP_MYSQL"
+        echo "$DEFAULT_MYSQL"
         # Остановка скрипта
         exit 1
     else
@@ -30,7 +27,7 @@ fi
 
 # Проверяем наличие конфигурационных файлов, если файлов нет
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
-if [ ! -d $CONFIG_MYSQL ];
+if [ ! -d $LOCAL_MYSQL ];
     then
         # Информируем пользователя
         echo "Идёт установка MySQL..."
@@ -38,7 +35,7 @@ if [ ! -d $CONFIG_MYSQL ];
         sudo apt-get update && sudo apt-get --allow --yes install mysql-server-5.6
     else
         # Копирование конфигурации
-        sudo cp $FTP_MYSQL $CONFIG_MYSQL
+        sudo cp $DEFAULT_MYSQL $LOCAL_MYSQL
 fi
 
 # Информируем пользователя
