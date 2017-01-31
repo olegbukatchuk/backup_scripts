@@ -5,21 +5,18 @@
 # Версия: 1.9
 # e-mail: oleg@bukatchuk.com
 
-# Подключаем файл c настройками DB Suite
-source "../db_suite.sh"
-
 # Информируем пользователя
 echo "Идёт проверка зависимостей скрипта..."
 
 # Проверяем наличие утилиты pv, если нет ставим её.
-if [ "" == "$PV_OK" ];
+if [ "" == "${PV_OK}" ];
 then
     # Ставим пакет pv (для отрисовки прогресс-бара).
     echo "Установка зависимостей скрипта..."
     sudo apt-get --force-yes --yes install pv
 fi
 
-if [ "" == "$SENDEMAIL_OK" ];
+if [ "" == "${SENDEMAIL_OK}" ];
 then
     # Ставим пакет sendemail.
     sudo apt-get --force-yes --yes install sendemail
@@ -33,11 +30,11 @@ echo "Проверка конфигурации..."
 
 # Проверяем наличие эталонных файлов, если файлов нет
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
-if [ ! -f $DEFAULT_MYSQL ];
+if [ ! -f ${DEFAULT_MYSQL} ];
     then
         # Информируем пользователя
         echo "В системе нет эталонных конфигурационных файлов!"\n
-        echo "$DEFAULT_MYSQL"
+        echo "${DEFAULT_MYSQL}"
         # Остановка скрипта
         exit 1
     else
@@ -47,7 +44,7 @@ fi
 
 # Проверяем наличие конфигурационных файлов, если файлов нет
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
-if [ ! -f $LOCAL_MYSQL ];
+if [ ! -f ${LOCAL_MYSQL} ];
     then
         # Информируем пользователя
         echo "Идёт установка MySQL..."
@@ -55,7 +52,7 @@ if [ ! -f $LOCAL_MYSQL ];
         sudo apt-get update && sudo apt-get --force-yes --yes install mysql-server-5.5
     else
         # Копирование конфигурации
-        sudo cp $DEFAULT_MYSQL $LOCAL_MYSQL
+        sudo cp ${DEFAULT_MYSQL} ${LOCAL_MYSQL}
 fi
 
 # Информируем пользователя
@@ -76,7 +73,7 @@ echo "Настройка сервера MySQL выполнена успешно!
 echo "Отправка отчёта на e-mail и в Telegram..."
 
 # Отправляем письмо с указанием имени сервера на котором выполнился скрипт.
-source $NOTICE/email.sh "Настройка $SERVER_NAME: сервер MySQL установлен!" "$SPACE_USED"
+source ${NOTICE}/email.sh "Настройка $SERVER_NAME: сервер MySQL установлен!" "$SPACE_USED"
 
 # Информируем пользователя
 echo "OK"
