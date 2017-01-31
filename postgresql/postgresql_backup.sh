@@ -40,6 +40,12 @@ then
     sudo apt-get --allow --yes install sendemail
 fi
 
+if [ "" == "$TELEGRAM_CLI_OK" ];
+then
+    # Ставим пакет telegram-cli.
+    sudo dpkg -i $PACKAGE/telegram-cli_1.0.6-1_amd64.deb
+fi
+
 # Информируем пользователя
 echo "OK"
 
