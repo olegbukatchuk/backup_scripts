@@ -16,19 +16,19 @@ if [ "" == "$PV_OK" ];
 then
     # Ставим пакет pv (для отрисовки прогресс-бара).
     echo "Установка зависимостей скрипта..."
-    sudo apt-get --allow --yes install pv
+    sudo apt-get --force-yes --yes install pv
 fi
 
 if [ "" == "$SENDEMAIL_OK" ]; 
 then
     # Ставим пакет sendemail.
-    sudo apt-get --allow --yes install sendemail
+    sudo apt-get --force-yes --yes install sendemail
 fi
 
 if [ "" == "$TELEGRAM_CLI_OK" ];
 then
     # Ставим пакеты libjansson4, telegram-cli.
-    sudo apt-get --allow --yes install libjansson4
+    sudo apt-get --force-yes --yes install libjansson4
     sudo dpkg -i $PACKAGE/telegram-cli_1.0.6-1_amd64.deb
 fi
 
