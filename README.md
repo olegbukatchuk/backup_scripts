@@ -52,13 +52,7 @@ crontab -e
 ```markdown
 sudo service cron restart
 ```
-ВАЖНО! После запуска скрипты проверяют наличие зависимостей в системе и если нужных утилит нет, то происходит их автоматическая установка. Это равносильно команде:
-
-```markdown
-sudo apt-get install sendemail && \
-sudo apt-get install telegram-cli && \
-sudo apt-get install pv
-```
+Готово!
 
 ## Поддержка и контакты
 
