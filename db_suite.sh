@@ -2,7 +2,7 @@
 
 # Все настройки скриптов
 # Автор:  Олег Букатчук
-# Версия: 0.7
+# Версия: 1.9
 # e-mail: oleg@bukatchuk.com
 
 # Создаём константу из абсолютного пути к директории скриптов и выставляем правильные права доступа.
@@ -98,3 +98,18 @@ export SMTP_PASS=password
 # Режим отладки скрипта (любое действие можно отслеживать: любая команда >> $LOG_FILE)
 # export LOG_DIR=/var/log/db_suite && sudo mkdir $LOG_DIR
 # export LOG_FILE=$LOG_DIR/postgresql_backup.log && sudo touch $LOG_DIR/$LOG_FILE
+
+# Подключаем файл
+source "$DB_SUITE/mysql/mysql_backup.sh"
+
+# Подключаем файл
+source "$DB_SUITE/mysql/mysql_tunning.sh"
+
+# Подключаем файл
+source "$DB_SUITE/postgresql/postgresql_backup.sh"
+
+# Подключаем файл
+source "$DB_SUITE/postgresql/postgresql_tunning.sh"
+
+# Подключаем файл
+source "$DB_SUITE/notice/email.sh"
