@@ -5,18 +5,15 @@
 # Версия: 1.9
 # e-mail: oleg@bukatchuk.com
 
-# Подключаем файл c настройками DB Suite
-source "../db_suite.sh"
-
 # Информируем пользователя
 echo "Проверка наличия директории для хранения бекапов..."
 
 # Проверяем наличие директории для бекапов, если директории нет 
 # выводим сообщение в консоль и останавливаем выполнение скрипта.
-if [ ! -d $STORAGE ]; 
+if [ ! -d ${STORAGE} ];
     then
         echo "В системе нет требуемой директории!"\n
-        echo "$STORAGE"
+        echo "${STORAGE}"
         exit 1
     else 
         echo "OK"
@@ -26,7 +23,7 @@ fi
 echo "Идёт проверка зависимостей скрипта..."
 
 # Проверяем наличие утилиты pv, если нет ставим её.
-if [ "" == "$PV_OK" ]; 
+if [ "" == "${PV_OK}" ];
 then
     # Ставим пакет pv (для отрисовки прогресс-бара).
     echo "Установка зависимостей скрипта..."
@@ -34,7 +31,7 @@ then
 fi
 
 # Проверяем наличие утилиты sendemail, если нет ставим её.
-if [ "" == "$SENDEMAIL_OK" ]; 
+if [ "" == "${SENDEMAIL_OK}" ];
 then
     # Ставим пакет sendemail (для отправки писем).
     sudo apt-get --force-yes --yes install sendemail
@@ -47,9 +44,9 @@ echo "OK"
 echo "Идёт создание дампа БД..."
 
 # Создаём дамп базы данных, рисуем прогресс бар, называем бекап текущей датой и архивируем его.
-pg_dump --dbname=$CONNECT_DB | pv -N "Загружено" \
-                             > $STORAGE/$(date +%Y-%m-%d).sql \
-                             | gzip > $STORAGE/$(date +%Y-%m-%d).sql.gz
+pg_dump --dbname=${CONNECT_DB} | pv -N "Загружено" \
+                             > ${STORAGE}/$(date +%Y-%m-%d).sql \
+                             | gzip > ${STORAGE}/$(date +%Y-%m-%d).sql.gz
 
 # Информируем пользователя
 echo "OK"
@@ -58,7 +55,7 @@ echo "OK"
 echo "Идёт поиск и удаление старых дампов БД..."
 
 # Находим файлы старше 7 дней в директории $STORAGE и удаляем их.
-find $STORAGE -type f -mtime +7 -exec rm -f {} \;
+find ${STORAGE} -type f -mtime +7 -exec rm -f {} \;
 
 # Информируем пользователя
 echo "ОК"
@@ -67,7 +64,7 @@ echo "ОК"
 echo "Проверка наличия задания в Cron'e..."
 
 # Преверяем наличие записи в планировщике, если нет выводим сообщение и подсказку.
-if crontab -l | grep "$RUN_POSTGRESQL_BACKUP";
+if crontab -l | grep "${RUN_POSTGRESQL_BACKUP}";
     then
         echo "OK"
     else
@@ -78,7 +75,7 @@ fi
 echo "Отправка отчёта на e-mail..."
 
 # Отправляем письмо с указанием имени сервера на котором выполнился скрипт.
-source "$NOTICE/email.sh" "$SERVER_NAME: backup $(date +%Y-%m-%d) готов!" "$SPACE_USED"
+source "${NOTICE}/email.sh" "${SERVER_NAME}: backup $(date +%Y-%m-%d) готов!" "${SPACE_USED}"
 
 # Информируем пользователя
 echo "OK"
