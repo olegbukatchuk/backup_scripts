@@ -2,11 +2,11 @@
 
 # Скрипт экспорта БД из PostgreSQL
 # Автор:  Олег Букатчук
-# Версия: 1.8
+# Версия: 1.9
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем файл c настройками DB Suite
-. ../db_suite.conf
+source ../db_suite.sh
 
 # Информируем пользователя
 echo "Проверка наличия директории для хранения бекапов..."
@@ -38,13 +38,6 @@ if [ "" == "$SENDEMAIL_OK" ];
 then
     # Ставим пакет sendemail (для отправки писем).
     sudo apt-get --force-yes --yes install sendemail
-fi
-
-if [ "" == "$TELEGRAM_CLI_OK" ];
-then
-    # Ставим пакеты libjansson4, telegram-cli.
-    sudo apt-get --force-yes --yes install libjansson4
-    sudo dpkg -i $PACKAGE/telegram-cli_1.0.6-1_amd64.deb
 fi
 
 # Информируем пользователя
@@ -84,10 +77,8 @@ fi
 # Информируем пользователя
 echo "Отправка отчёта на e-mail..."
 
-# Отправляем письмо и push-уведомление в Telegram с указанием имени сервера
-# на котором выполнился скрипт, датой, размером директории бекапов.
-. $NOTICE/email.sh "$SERVER_NAME: backup $(date +%Y-%m-%d) готов!" "$SPACE_USED"
-. $NOTICE/telegram.sh "$SERVER_NAME: backup $(date +%Y-%m-%d) готов!" "$SPACE_USED"
+# Отправляем письмо с указанием имени сервера на котором выполнился скрипт.
+source $NOTICE/email.sh "$SERVER_NAME: backup $(date +%Y-%m-%d) готов!" "$SPACE_USED"
 
 # Информируем пользователя
 echo "OK"

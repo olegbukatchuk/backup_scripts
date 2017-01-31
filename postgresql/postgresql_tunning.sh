@@ -2,11 +2,11 @@
 
 # Скрипт установки и настройки сервера PostgreSQL
 # Автор:  Олег Букатчук
-# Версия: 0.9
+# Версия: 1.9
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем файл c настройками DB Suite
-. ../db_suite.conf
+source ../db_suite.sh
 
 # Информируем пользователя
 echo "Идёт проверка зависимостей скрипта..."
@@ -23,13 +23,6 @@ if [ "" == "$SENDEMAIL_OK" ];
 then
     # Ставим пакет sendemail.
     sudo apt-get --force-yes --yes install sendemail
-fi
-
-if [ "" == "$TELEGRAM_CLI_OK" ];
-then
-    # Ставим пакеты libjansson4, telegram-cli.
-    sudo apt-get --force-yes --yes install libjansson4
-    sudo dpkg -i $PACKAGE/telegram-cli_1.0.6-1_amd64.deb
 fi
 
 # Информируем пользователя
@@ -82,10 +75,8 @@ echo "Настройка сервера PostgreSQL выполнена успеш
 # Информируем пользователя
 echo "Отправка отчёта на e-mail..."
 
-# Отправляем письмо и push-уведомление в Telegram с указанием имени сервера
-# на котором выполнился скрипт, датой, размером директории бекапов.
-. $NOTICE/email.sh "Настройка $SERVER_NAME: сервера PostgreSQL установлен!" "$SPACE_USED"
-. $NOTICE/telegram.sh "Настройка $SERVER_NAME: сервера PostgreSQL установлен!" "$SPACE_USED"
+# Отправляем письмо с указанием имени сервера на котором выполнился скрипт.
+source $NOTICE/email.sh "Настройка $SERVER_NAME: сервера PostgreSQL установлен!" "$SPACE_USED"
 
 # Информируем пользователя
 echo "OK"
