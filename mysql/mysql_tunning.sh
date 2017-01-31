@@ -30,7 +30,8 @@ echo "OK"
 
 if [ "" == "$TELEGRAM_CLI_OK" ];
 then
-    # Ставим пакет telegram-cli.
+    # Ставим пакеты libjansson4, telegram-cli.
+    sudo apt-get --allow --yes install  libjansson4
     sudo dpkg -i $PACKAGE/telegram-cli_1.0.6-1_amd64.deb
 fi
 
