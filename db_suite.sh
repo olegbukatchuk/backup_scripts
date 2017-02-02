@@ -55,7 +55,7 @@ if [ $# -eq 2 ];
           sudo ${DB_SUITE}/postgresql/postgresql_tunning.sh
           ;;
      *)
-          echo "Не верно заданы запуска."
+          echo "Не верно заданы параметры запуска."
           ;;
         esac
 fi
