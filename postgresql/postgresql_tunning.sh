@@ -6,7 +6,7 @@
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем конфиг
-source "../config.sh
+source "../config.sh"
 
 # Информируем пользователя
 echo "Идёт проверка зависимостей скрипта..."

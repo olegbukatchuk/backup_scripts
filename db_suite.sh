@@ -5,9 +5,6 @@
 # Версия: 1.9
 # e-mail: oleg@bukatchuk.com
 
-# Подключаем настройки
-source ./$DB_SUITE/db_suite.sh
-
 # Тип БД (1-й параметр к скрипту)
 export TYPE=$1
 
