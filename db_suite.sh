@@ -28,7 +28,7 @@ export SETCOLOR_NORMAL="echo -en \\033[0;39m"
 # $0	возвращает путь к shell скрипту.
 if [ $# -eq 2 ];
     then
-        echo "Usage: $0 argument1 argument2";
+        echo "Укажите параметры запуска: $0 условие1 условие2";
         exit 1;
     else
         # Команда, которую нужно отследить
