@@ -101,4 +101,3 @@ source "${DB_SUITE}/postgresql/postgresql_tunning.sh"
 
 # Подключаем файл
 source "${DB_SUITE}/notice/email.sh"
-
