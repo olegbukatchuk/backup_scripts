@@ -32,23 +32,23 @@ if [ $# -eq 2 ];
         exit 1;
     else
         # Команда, которую нужно отследить
-        printf 'Введите параметры запуска:'
+        # printf 'Введите параметры запуска:'
 
         # Читаем ввод из консоли
-        read INPUT
+        # read INPUT
 
         # Ловим параметры и запускаем соответствующий параметрам скрипт
-        case ${INPUT} in
-     "mysql backup")
+        case "$0 $1 $2" in
+     "$0 mysql backup")
           sudo ${DB_SUITE}/mysql/mysql_backup.sh
           ;;
-     "mysql tunning")
+     "$0 mysql tunning")
           sudo ${DB_SUITE}/mysql/mysql_tunning.sh
           ;;
-     "postgresql backup")
+     "$0 postgresql backup")
           sudo ${DB_SUITE}/postgresql/postgresql_backup.sh
           ;;
-     "postgresql tunning")
+     "$0 postgresql tunning")
           sudo ${DB_SUITE}/postgresql/postgresql_tunning.sh
           ;;
      *)
