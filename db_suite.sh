@@ -6,7 +6,7 @@
 # e-mail: oleg@bukatchuk.com
 
 # Тип БД (1-й параметр к скрипту)
-export TYPE=$1
+export DB_TYPE=$1
 
 # Действие с БД (2-й параметр к скрипту)
 export ACTION=$2
@@ -38,7 +38,7 @@ if [ $# -eq 2 ];
         # read INPUT
 
         # Ловим параметры и запускаем соответствующий параметрам скрипт
-        case "$0 $1 $2" in
+        case `$0 ${DB_TYPE} ${ACTION}` in
      "$0 mysql backup")
           sudo ${DB_SUITE}/mysql/mysql_backup.sh
           ;;
