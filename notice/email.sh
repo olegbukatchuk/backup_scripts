@@ -8,10 +8,10 @@
 # Настройки почты
 
 # Поле "Кому"
-export MAILTO=login@target.com
+export MAILTO=login@mailto.com
 
 # Поле "От кого"
-export FROM=my@server.com
+export FROM=login@from.com
 
 # Тема письма (1-й параметр к скрипту)
 export NAME=$1
