@@ -40,7 +40,7 @@ if [ $# -eq 2 ];
         # Читаем ввод из консоли
         read INPUT
 
-        # Ловим параметры и запускаем скрипт
+        # Ловим параметры и запускаем соответствующий параметрам скрипт
         case ${INPUT} in
      "mysql backup")
           sudo ${DB_SUITE}/mysql/mysql_backup.sh
@@ -67,11 +67,13 @@ if [ $? -eq 0 ];
     then
         ${SETCOLOR_SUCCESS}
         echo -n "$(tput hpa $(tput cols))$(tput cub 6)[OK]"
+        echo -n "Путь к скрипту: $0"
         ${SETCOLOR_NORMAL}
         echo
     else
         ${SETCOLOR_FAILURE}
         echo -n "$(tput hpa $(tput cols))$(tput cub 6)[fail]"
+        echo -n "Путь к скрипту: $0"
         ${SETCOLOR_NORMAL}
         echo
 fi
