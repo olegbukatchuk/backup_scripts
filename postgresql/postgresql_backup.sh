@@ -6,7 +6,7 @@
 # e-mail: oleg@bukatchuk.com
 
 # Подключаем конфиг
-source "../config.sh
+source "../config.sh"
 
 # Информируем пользователя
 echo "Проверка наличия директории для хранения бекапов..."
