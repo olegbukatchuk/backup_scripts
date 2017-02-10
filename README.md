@@ -1,7 +1,7 @@
-# DB Suite v1.9 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) [![Build Status](https://travis-ci.org/olegbukatchuk/db_suite.svg?branch=master)](https://travis-ci.org/olegbukatchuk/db_suite)
-Скрипты для управления и резервного копирования MySQL/PostgreSQL 
+# DB Suite v1.9 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+Скрипты для управления и резервного копирования MySQL/PostgreSQL
 
-### Возможности скриптов
+## Возможности скриптов
 - Установка и настройка сервера MySQL/PostgreSQL: деплой нового сервера.
 - Создание дампов баз данных по расписанию. 
 - Ротация бекапов: поиск и удаление старых дампов.
