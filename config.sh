@@ -11,6 +11,12 @@ export DB_SUITE="/path/to/db_suite"
 # Создаём константу из абсолютного пути к директории со скриптами для уведомлений.
 export EMAIL="${DB_SUITE}/action"
 
+# Создаём константу из смонтированной ftp-директории.
+export FTP_MOUNT_DIR="/mnt/ftp"
+
+# Создаём константу из ftp-коннекта.
+export FTP_CONNECT="ftp://user:password@ftp.domain.ru/"
+
 # Создаём константу с обозначением имени сервера
 export SERVER_NAME=hostname
 
