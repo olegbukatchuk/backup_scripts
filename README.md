@@ -17,7 +17,7 @@
 ```markdown
 git clone https://github.com/olegbukatchuk/db_suite
 ```
-и прописываем значения переменных и констант в конфиге db_suite.conf. 
+и прописываем значения переменных и констант в конфиге config.sh, а также в файле notice/email.sh для отправки отчётов на e-mail.
 
 ### Пример работы скрипта
 ```markdown
