@@ -9,7 +9,7 @@
 export DB_TYPE=$1
 
 # Действие с БД (2-й параметр к скрипту)
-export ACTION=$2
+export ACTION_TYPE=$2
 
 # Зеленый цвет
 export SETCOLOR_SUCCESS="echo -en \\033[1;32m"
@@ -38,7 +38,7 @@ if [ $# -eq 2 ];
         # read INPUT
 
         # Ловим параметры и запускаем соответствующий параметрам скрипт
-        case `$0 ${DB_TYPE} ${ACTION}` in
+        case `$0 ${DB_TYPE} ${ACTION_TYPE}` in
      "$0 mysql backup")
           sudo ${DB_SUITE}/mysql/mysql_backup.sh
           ;;

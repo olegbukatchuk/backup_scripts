@@ -78,7 +78,7 @@ fi
 echo "Отправка отчёта на e-mail..."
 
 # Отправляем письмо с указанием имени сервера на котором выполнился скрипт.
-source "${NOTICE}/email.sh" "${SERVER_NAME}: backup $(date +%Y-%m-%d) готов!" "${SPACE_USED}"
+source "${NOTICE_EMAIL}/email.sh" "${SERVER_NAME}: backup $(date +%Y-%m-%d) готов!" "${SPACE_USED}"
 
 # Информируем пользователя
 echo "OK"
