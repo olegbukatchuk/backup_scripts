@@ -9,7 +9,7 @@
 export DB_SUITE="/path/to/db_suite"
 
 # Создаём константу из абсолютного пути к директории со скриптами для уведомлений.
-export NOTICE="${DB_SUITE}/notice"
+export NOTICE_EMAIL="${DB_SUITE}/action"
 
 # Создаём константу с обозначением имени сервера
 export SERVER_NAME=hostname
