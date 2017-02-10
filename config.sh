@@ -66,7 +66,7 @@ export SENDEMAIL_OK=$(dpkg-query -W --showformat='${Status}\n' sendemail | grep 
 # Настройки PostgreSQL
 
 # Создаём константу для подключеня к базе данных PostgeSQL.
-# export CONNECT_DB=postgresql://password:login@127.0.0.1:5432/database
+# export CONNECT_POSTGRESQL=postgresql://password:login@127.0.0.1:5432/database
 
 #####################################################################################################################
 # Настройки режима отладки

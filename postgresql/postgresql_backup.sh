@@ -47,9 +47,9 @@ echo "OK"
 echo "Идёт создание дампа БД..."
 
 # Создаём дамп базы данных, рисуем прогресс бар, называем бекап текущей датой и архивируем его.
-pg_dump --dbname=${CONNECT_DB} | pv -N "Загружено" \
-                             > ${STORAGE}/$(date +%Y-%m-%d).sql \
-                             | gzip > ${STORAGE}/$(date +%Y-%m-%d).sql.gz
+pg_dump --dbname=${CONNECT_POSTGRESQL} | pv -N "Загружено" \
+                               > ${STORAGE}/$(date +%Y-%m-%d).sql \
+                               | gzip > ${STORAGE}/$(date +%Y-%m-%d).sql.gz
 
 # Информируем пользователя
 echo "OK"
