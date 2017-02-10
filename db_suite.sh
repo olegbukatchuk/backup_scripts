@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # DB Suite роутер
 # Автор:  Олег Букатчук
