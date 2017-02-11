@@ -7,5 +7,4 @@ DESTINATION=$1;
 MESSAGE=$2;
 
 #
-(sleep 3; echo "msg ${DESTINATION} ${MESSAGE}"; echo "safe_quit") \
-              | bin/telegram-cli -k tg-server.pub -W
+(sleep 3; echo "msg ${DESTINATION} ${MESSAGE}"; echo "safe_quit") | bin/telegram-cli -k tg-server.pub -W
