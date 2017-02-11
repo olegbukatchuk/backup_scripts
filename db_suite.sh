@@ -5,6 +5,9 @@
 # Версия: 1.9
 # e-mail: oleg@bukatchuk.com
 
+# Подключаем конфиг
+source "./config.sh"
+
 # Тип БД (1-й параметр к скрипту)
 export DB_TYPE=$1
 
