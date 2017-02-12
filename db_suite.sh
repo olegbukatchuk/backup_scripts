@@ -42,21 +42,21 @@ if [ $# -eq 2 ];
 
         # Ловим параметры и запускаем соответствующий параметрам скрипт
         case `$0 ${DB_TYPE} ${ACTION_TYPE}` in
-     "$0 mysql backup")
-          sudo ${DB_SUITE}/mysql/mysql_backup.sh
-          ;;
-     "$0 mysql tunning")
-          sudo ${DB_SUITE}/mysql/mysql_tunning.sh
-          ;;
-     "$0 postgresql backup")
-          sudo ${DB_SUITE}/postgresql/postgresql_backup.sh
-          ;;
-     "$0 postgresql tunning")
-          sudo ${DB_SUITE}/postgresql/postgresql_tunning.sh
-          ;;
-     *)
-          echo "Не верно заданы параметры запуска."
-          ;;
+            "$0 mysql backup")
+                sudo ${DB_SUITE}/mysql/mysql_backup.sh
+                ;;
+            "$0 mysql tunning")
+                sudo ${DB_SUITE}/mysql/mysql_tunning.sh
+                ;;
+            "$0 postgresql backup")
+                sudo ${DB_SUITE}/postgresql/postgresql_backup.sh
+                ;;
+            "$0 postgresql tunning")
+                sudo ${DB_SUITE}/postgresql/postgresql_tunning.sh
+                ;;
+            *)
+                echo "Не верно заданы параметры запуска."
+                ;;
         esac
 fi
 
