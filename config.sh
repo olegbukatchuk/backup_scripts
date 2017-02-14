@@ -15,7 +15,7 @@ export EMAIL="${DB_SUITE}/action"
 export FTP_MOUNT_DIR="/mnt/ftp"
 
 # Создаём константу из ftp-коннекта.
-export FTP_CONNECT="ftp://user:password@ftp.domain.ru/"
+export FTP_STORAGE="/path/to/ftp/dir"
 
 # Создаём константу с обозначением имени сервера
 export SERVER_NAME=hostname

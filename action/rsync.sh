@@ -12,10 +12,10 @@ source "../config.sh"
 sudo apt-get install sshfs
 
 # Подключаем FTP и монтируем его в локальную директорию.
-sudo sshfs -o allow_root db_suite@188.40.108.7:${FTP_CONNECT} ${FTP_MOUNT_DIR}
+sudo sshfs -o allow_root db_suite@ip_addr:${FTP_STORAGE} ${FTP_MOUNT_DIR}
 
 # Синхронизируем директории
-sudo rsync -zavP /data/backup/postgresql/ /data/ftp/db/postgresql/ssmp/artek
+sudo rsync -zavP ${STORAGE} ${FTP_STORAGE}
 
 # Удаляем архивы старше 7 дней...
-sudo find /data/ftp/db/postgresql/ssmp/artek -type f -mtime +7 -exec rm -f {} \;
+sudo find ${FTP_STORAGE} -type f -mtime +7 -exec rm -f {} \;
