@@ -85,7 +85,7 @@ export SENDEMAIL_OK=$(dpkg-query -W --showformat='${Status}\n' sendemail | grep 
 sudo chown -R user:user ${DB_SUITE}
 
 # Выставляем права доступа на директорию со скриптами.
-sudo chmod -R 770 ${DB_SUITE}
+sudo chmod -R 777 ${DB_SUITE}
 
 # Делаем скрипты для MySQL исполняемыми.
 sudo chmod +x ${RUN_MYSQL_BACKUP}
